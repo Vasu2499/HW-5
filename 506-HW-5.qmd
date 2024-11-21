@@ -1,6 +1,6 @@
 ---
-title: "506-HW-5"
-author: "Vasudha"
+title: "STATS 506 : HW-5"
+author: "Vasudha Rohatgi"
 format: 
   pdf:
     pdf-engine: pdflatex
@@ -11,7 +11,7 @@ format:
       - \usepackage{setspace}  
       - \setstretch{1.0}        
       - \usepackage{geometry}   
-      - \geometry{margin=0.4in}   
+      - \geometry{margin=0.6in}   
       - \usepackage{parskip}     
       - \setlength{\parskip}{0.3em}  
       - \setlength{\parindent}{0.1em}
@@ -25,6 +25,8 @@ format:
     prefer-html: true  
 editor: visual
 ---
+
+#### Code hosted at <https://github.com/Vasu2499/HW-5>
 
 ## Problem - 1
 
@@ -255,6 +257,8 @@ saveWidget(plot, "interactive_plot.html")
 ```
 
 **You can view the interactive plot by clicking [here](./interactive_plot.html).**
+
+Or, paste this network-link into the web-browser <file:///C:/Users/vasud/OneDrive/Desktop/U-M%20-%20ALL/STATS%20506/HW-5/interactive_plot.html>
 
 \
 
