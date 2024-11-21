@@ -1,0 +1,17 @@
+{
+    "sortOrder": [
+        {
+            "columnIndex": 2,
+            "ascending": true
+        },
+        {
+            "columnIndex": 1,
+            "ascending": true
+        },
+        {
+            "columnIndex": 4,
+            "ascending": false
+        }
+    ],
+    "path": "C:/Users/vasud/OneDrive/Desktop/U-M - ALL/STATS 506/HW-5"
+}
