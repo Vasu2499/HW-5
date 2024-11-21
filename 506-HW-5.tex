@@ -576,7 +576,8 @@ The following object is masked from 'package:graphics':
   \FunctionTok{summarise}\NormalTok{(}\AttributeTok{mean\_price =} \FunctionTok{mean}\NormalTok{(price\_usd, }\AttributeTok{na.rm =} \ConstantTok{TRUE}\NormalTok{)) }\SpecialCharTok{\%\textgreater{}\%}
   \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ year, }\AttributeTok{y =}\NormalTok{ mean\_price)) }\SpecialCharTok{+}
   \FunctionTok{geom\_line}\NormalTok{(}\AttributeTok{color =} \StringTok{"blue"}\NormalTok{, }\AttributeTok{linewidth =} \DecValTok{1}\NormalTok{) }\SpecialCharTok{+}
-  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Average Sales Price Over Time"}\NormalTok{, }\AttributeTok{x =} \StringTok{"Year"}\NormalTok{, }\AttributeTok{y =} \StringTok{"Average Sales Price (USD)"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Average Sales Price Over Time"}\NormalTok{, }\AttributeTok{x =} \StringTok{"Year"}\NormalTok{, }
+       \AttributeTok{y =} \StringTok{"Average Sales Price (USD)"}\NormalTok{) }\SpecialCharTok{+}
   \FunctionTok{theme\_minimal}\NormalTok{()}
 
 \CommentTok{\# Display the plot}
@@ -599,7 +600,7 @@ The following object is masked from 'package:graphics':
 \NormalTok{    Genre\_\_\_Others }\SpecialCharTok{==} \DecValTok{1} \SpecialCharTok{\textasciitilde{}} \StringTok{"Others"}\NormalTok{,}
     \ConstantTok{TRUE} \SpecialCharTok{\textasciitilde{}} \ConstantTok{NA\_character\_}  
 \NormalTok{  ))}
-\FunctionTok{print}\NormalTok{(}\FunctionTok{head}\NormalTok{(art\_sales[[}\DecValTok{113}\NormalTok{]],}\DecValTok{10}\NormalTok{)) }\CommentTok{\# checking if transformation }
+\FunctionTok{print}\NormalTok{(}\FunctionTok{head}\NormalTok{(art\_sales[[}\DecValTok{113}\NormalTok{]],}\DecValTok{10}\NormalTok{)) }\CommentTok{\# checking transformation }
 \end{Highlighting}
 \end{Shaded}
 
@@ -607,12 +608,6 @@ The following object is masked from 'package:graphics':
  [1] "Painting"    "Sculpture"   "Sculpture"   "Painting"    "Photography"
  [6] "Painting"    "Painting"    "Painting"    "Painting"    "Sculpture"  
 \end{verbatim}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-                                \CommentTok{\# was successful }
-\end{Highlighting}
-\end{Shaded}
 
 \textbf{Fluctuation in the selling price of each genre over time}
 
@@ -623,7 +618,8 @@ The following object is masked from 'package:graphics':
   \FunctionTok{summarise}\NormalTok{(}\AttributeTok{num\_sales =} \FunctionTok{n}\NormalTok{()) }\SpecialCharTok{\%\textgreater{}\%}
   \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ year, }\AttributeTok{y =}\NormalTok{ num\_sales, }\AttributeTok{fill =}\NormalTok{ genre)) }\SpecialCharTok{+}
   \FunctionTok{geom\_bar}\NormalTok{(}\AttributeTok{stat =} \StringTok{"identity"}\NormalTok{, }\AttributeTok{position =} \StringTok{"stack"}\NormalTok{) }\SpecialCharTok{+}
-  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Distribution of Genres Over Time"}\NormalTok{, }\AttributeTok{x =} \StringTok{"Year"}\NormalTok{, }\AttributeTok{y =} \StringTok{"Number of Sales"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Distribution of Genres Over Time"}\NormalTok{, }
+       \AttributeTok{x =} \StringTok{"Year"}\NormalTok{, }\AttributeTok{y =} \StringTok{"Number of Sales"}\NormalTok{) }\SpecialCharTok{+}
   \FunctionTok{theme\_minimal}\NormalTok{() }\SpecialCharTok{+}
   \FunctionTok{theme}\NormalTok{(}\AttributeTok{legend.position =} \StringTok{"bottom"}\NormalTok{)}
 \end{Highlighting}
@@ -650,7 +646,8 @@ The following object is masked from 'package:graphics':
 \begin{Highlighting}[]
 \FunctionTok{library}\NormalTok{(htmlwidgets)}
   
-\NormalTok{plot }\OtherTok{\textless{}{-}} \FunctionTok{plot\_ly}\NormalTok{(art\_sales, }\AttributeTok{x =} \SpecialCharTok{\textasciitilde{}}\NormalTok{year, }\AttributeTok{y =} \SpecialCharTok{\textasciitilde{}}\NormalTok{price\_usd, }\AttributeTok{color =} \SpecialCharTok{\textasciitilde{}}\NormalTok{genre, }\AttributeTok{type =} \StringTok{\textquotesingle{}scatter\textquotesingle{}}\NormalTok{, }\AttributeTok{mode =} \StringTok{\textquotesingle{}lines+markers\textquotesingle{}}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%}
+\NormalTok{plot }\OtherTok{\textless{}{-}} \FunctionTok{plot\_ly}\NormalTok{(art\_sales, }\AttributeTok{x =} \SpecialCharTok{\textasciitilde{}}\NormalTok{year, }\AttributeTok{y =} \SpecialCharTok{\textasciitilde{}}\NormalTok{price\_usd, }\AttributeTok{color =} \SpecialCharTok{\textasciitilde{}}\NormalTok{genre, }
+                \AttributeTok{type =} \StringTok{\textquotesingle{}scatter\textquotesingle{}}\NormalTok{, }\AttributeTok{mode =} \StringTok{\textquotesingle{}lines+markers\textquotesingle{}}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%}
   \FunctionTok{layout}\NormalTok{(}
     \AttributeTok{title =} \StringTok{"Change in Sales Price Over Time by Genre"}\NormalTok{,}
     \AttributeTok{xaxis =} \FunctionTok{list}\NormalTok{(}\AttributeTok{title =} \StringTok{"Year"}\NormalTok{),}
@@ -749,14 +746,16 @@ Warning: package 'knitr' was built under R version 4.4.2
 \NormalTok{][}
 \NormalTok{  airports\_dt, on }\OtherTok{=}\NormalTok{ .(}\AttributeTok{dest =}\NormalTok{ faa), nomatch }\OtherTok{=} \DecValTok{0}
 \NormalTok{][}
-\NormalTok{  , .(name, }\StringTok{\textasciigrave{}}\AttributeTok{Mean Delay}\StringTok{\textasciigrave{}}\NormalTok{, }\StringTok{\textasciigrave{}}\AttributeTok{Median Delay}\StringTok{\textasciigrave{}}\NormalTok{, Flights) }\CommentTok{\# Use the column directly after the join}
+\NormalTok{  , .(name, }\StringTok{\textasciigrave{}}\AttributeTok{Mean Delay}\StringTok{\textasciigrave{}}\NormalTok{, }\StringTok{\textasciigrave{}}\AttributeTok{Median Delay}\StringTok{\textasciigrave{}}\NormalTok{, Flights) }
 \NormalTok{]}
 
 \ControlFlowTok{if}\NormalTok{ (}\FunctionTok{nrow}\NormalTok{(departure\_delay\_summary) }\SpecialCharTok{==} \DecValTok{0}\NormalTok{) \{}
-\NormalTok{  departure\_delay\_summary }\OtherTok{\textless{}{-}} \FunctionTok{data.table}\NormalTok{(}\AttributeTok{name =} \ConstantTok{NA}\NormalTok{, }\StringTok{\textasciigrave{}}\AttributeTok{Mean Delay}\StringTok{\textasciigrave{}} \OtherTok{=} \ConstantTok{NA}\NormalTok{, }\StringTok{\textasciigrave{}}\AttributeTok{Median Delay}\StringTok{\textasciigrave{}} \OtherTok{=} \ConstantTok{NA}\NormalTok{, }\AttributeTok{Flights =} \ConstantTok{NA}\NormalTok{)}
+\NormalTok{  departure\_delay\_summary }\OtherTok{\textless{}{-}} \FunctionTok{data.table}\NormalTok{(}\AttributeTok{name =} \ConstantTok{NA}\NormalTok{, }\StringTok{\textasciigrave{}}\AttributeTok{Mean Delay}\StringTok{\textasciigrave{}} \OtherTok{=} \ConstantTok{NA}\NormalTok{, }
+                                        \StringTok{\textasciigrave{}}\AttributeTok{Median Delay}\StringTok{\textasciigrave{}} \OtherTok{=} \ConstantTok{NA}\NormalTok{, }\AttributeTok{Flights =} \ConstantTok{NA}\NormalTok{)}
 \NormalTok{\}}
 
-\FunctionTok{kable}\NormalTok{(departure\_delay\_summary, }\AttributeTok{caption =} \StringTok{"Departure Delays"}\NormalTok{, }\AttributeTok{digits =} \DecValTok{1}\NormalTok{, }\AttributeTok{align =} \StringTok{\textquotesingle{}c\textquotesingle{}}\NormalTok{)}
+\FunctionTok{kable}\NormalTok{(departure\_delay\_summary, }\AttributeTok{caption =} \StringTok{"Departure Delays"}\NormalTok{, }
+      \AttributeTok{digits =} \DecValTok{1}\NormalTok{, }\AttributeTok{align =} \StringTok{\textquotesingle{}c\textquotesingle{}}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -909,11 +908,12 @@ NW Arkansas Regional & 6.5 & -5.0 & 1011 \\
 \NormalTok{][}
 \NormalTok{  airports\_dt, on }\OtherTok{=}\NormalTok{ .(}\AttributeTok{dest =}\NormalTok{ faa), nomatch }\OtherTok{=} \DecValTok{0}
 \NormalTok{][}
-\NormalTok{  , .(name, mean\_arr\_delay, median\_arr\_delay, num\_flights) }\CommentTok{\# Use the column directly after the join}
+\NormalTok{  , .(name, mean\_arr\_delay, median\_arr\_delay, num\_flights) }
 \NormalTok{]}
 
 \ControlFlowTok{if}\NormalTok{ (}\FunctionTok{nrow}\NormalTok{(arrival\_delay\_summary) }\SpecialCharTok{==} \DecValTok{0}\NormalTok{) \{}
-\NormalTok{  arrival\_delay\_summary }\OtherTok{\textless{}{-}} \FunctionTok{data.table}\NormalTok{(}\AttributeTok{name =} \ConstantTok{NA}\NormalTok{, }\AttributeTok{mean\_arr\_delay =} \ConstantTok{NA}\NormalTok{, }\AttributeTok{median\_arr\_delay =} \ConstantTok{NA}\NormalTok{, }\AttributeTok{num\_flights =} \ConstantTok{NA}\NormalTok{)}
+\NormalTok{  arrival\_delay\_summary }\OtherTok{\textless{}{-}} \FunctionTok{data.table}\NormalTok{(}\AttributeTok{name =} \ConstantTok{NA}\NormalTok{, }\AttributeTok{mean\_arr\_delay =} \ConstantTok{NA}\NormalTok{, }
+                                      \AttributeTok{median\_arr\_delay =} \ConstantTok{NA}\NormalTok{, }\AttributeTok{num\_flights =} \ConstantTok{NA}\NormalTok{)}
 \NormalTok{\}}
 
 \FunctionTok{kable}\NormalTok{(arrival\_delay\_summary, }\AttributeTok{align =} \StringTok{\textquotesingle{}c\textquotesingle{}}\NormalTok{)}

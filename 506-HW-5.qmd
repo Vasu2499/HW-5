@@ -197,7 +197,8 @@ sales_price_over_time <- art_sales %>%
   summarise(mean_price = mean(price_usd, na.rm = TRUE)) %>%
   ggplot(aes(x = year, y = mean_price)) +
   geom_line(color = "blue", linewidth = 1) +
-  labs(title = "Average Sales Price Over Time", x = "Year", y = "Average Sales Price (USD)") +
+  labs(title = "Average Sales Price Over Time", x = "Year", 
+       y = "Average Sales Price (USD)") +
   theme_minimal()
 
 # Display the plot
@@ -217,8 +218,8 @@ art_sales <- art_sales %>%
     Genre___Others == 1 ~ "Others",
     TRUE ~ NA_character_  
   ))
-print(head(art_sales[[113]],10)) # checking if transformation 
-                                # was successful 
+print(head(art_sales[[113]],10)) # checking transformation 
+                                
 ```
 
 **Fluctuation in the selling price of each genre over time**
@@ -229,7 +230,8 @@ genre_distribution <- art_sales %>%
   summarise(num_sales = n()) %>%
   ggplot(aes(x = year, y = num_sales, fill = genre)) +
   geom_bar(stat = "identity", position = "stack") +
-  labs(title = "Distribution of Genres Over Time", x = "Year", y = "Number of Sales") +
+  labs(title = "Distribution of Genres Over Time", 
+       x = "Year", y = "Number of Sales") +
   theme_minimal() +
   theme(legend.position = "bottom")
 
@@ -242,7 +244,8 @@ genre_distribution
 ```{r}
 library(htmlwidgets)
   
-plot <- plot_ly(art_sales, x = ~year, y = ~price_usd, color = ~genre, type = 'scatter', mode = 'lines+markers') %>%
+plot <- plot_ly(art_sales, x = ~year, y = ~price_usd, color = ~genre, 
+                type = 'scatter', mode = 'lines+markers') %>%
   layout(
     title = "Change in Sales Price Over Time by Genre",
     xaxis = list(title = "Year"),
@@ -294,14 +297,16 @@ departure_delay_summary <- flights_dt[
 ][
   airports_dt, on = .(dest = faa), nomatch = 0
 ][
-  , .(name, `Mean Delay`, `Median Delay`, Flights) # Use the column directly after the join
+  , .(name, `Mean Delay`, `Median Delay`, Flights) 
 ]
 
 if (nrow(departure_delay_summary) == 0) {
-  departure_delay_summary <- data.table(name = NA, `Mean Delay` = NA, `Median Delay` = NA, Flights = NA)
+  departure_delay_summary <- data.table(name = NA, `Mean Delay` = NA, 
+                                        `Median Delay` = NA, Flights = NA)
 }
 
-kable(departure_delay_summary, caption = "Departure Delays", digits = 1, align = 'c')
+kable(departure_delay_summary, caption = "Departure Delays", 
+      digits = 1, align = 'c')
 
 # Arrival delay summary
 arrival_delay_summary <- flights_dt[
@@ -318,11 +323,12 @@ arrival_delay_summary <- flights_dt[
 ][
   airports_dt, on = .(dest = faa), nomatch = 0
 ][
-  , .(name, mean_arr_delay, median_arr_delay, num_flights) # Use the column directly after the join
+  , .(name, mean_arr_delay, median_arr_delay, num_flights) 
 ]
 
 if (nrow(arrival_delay_summary) == 0) {
-  arrival_delay_summary <- data.table(name = NA, mean_arr_delay = NA, median_arr_delay = NA, num_flights = NA)
+  arrival_delay_summary <- data.table(name = NA, mean_arr_delay = NA, 
+                                      median_arr_delay = NA, num_flights = NA)
 }
 
 kable(arrival_delay_summary, align = 'c')
